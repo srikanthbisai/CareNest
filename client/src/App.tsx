@@ -12,7 +12,7 @@ function App() {
   const router = createBrowserRouter([
     {
       path: '/',
-      element: <Layout />, // Correct JSX syntax
+      element: <Layout />,
       children: [
         {
           path:"/", 
