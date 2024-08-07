@@ -29,7 +29,7 @@ function HomePage() {
          <p>Benefits of Elder Care At Home</p>
           <div className="4containers flex items-center gap-2 w-3/4 m-auto mt-10">
             <div className="bg-red-200">
-              <img src="" />
+              <img src="" alt="" />
                Faster Recovery
                <p>--------------------</p> 
                <p>In home elder care services are proven to promote recovery.</p>
