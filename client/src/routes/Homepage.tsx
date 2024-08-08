@@ -14,7 +14,6 @@ function HomePage() {
             <p className="text-2xl hidden lg:block xl:block">with compassionate care.</p> 
           </div>
 
-          <button className="absolute left-[300px] top-1/2 w-[300px] bg-red-200 rounded-full">connect with us</button>
         </div>
   
         <div className="infoContainer mt-10 space-y-2">
@@ -25,9 +24,9 @@ function HomePage() {
           
         </div>
 
-        <div className=" flex flex-col items-center  mt-40 benefits_container">
+        <div className=" flex flex-col items-center mt-40 benefits_container">
          <p>Benefits of Elder Care At Home</p>
-          <div className="4containers flex items-center gap-2 w-3/4 m-auto mt-10">
+          <div className="4containers flex items-center gap-2 w-3/4 m-auto mt-10 sm:flex-col">
             <div className="bg-red-200">
               <img src="" alt="" />
                Faster Recovery

@@ -6,6 +6,7 @@ import Login from './routes/Login';
 import Register from './routes/Register';
 import Services from './routes/Services';
 import HomePage from './routes/Homepage';
+import Blog from './routes/Blog';
 
 
 function App() {
@@ -30,6 +31,11 @@ function App() {
           path: "/services",
           element: <Services/>
          },
+         {
+          path: "/blog",
+          element: <Blog/>
+         },
+
 
 
       ],
