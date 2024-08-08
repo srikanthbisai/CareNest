@@ -7,6 +7,7 @@ import Register from './routes/Register';
 import Services from './routes/Services';
 import HomePage from './routes/Homepage';
 import Blog from './routes/Blog';
+import Plans from './routes/Plans';
 
 
 function App() {
@@ -35,6 +36,11 @@ function App() {
           path: "/blog",
           element: <Blog/>
          },
+         {
+          path: "/plans",
+          element: <Plans/>
+         },
+         
 
 
 
