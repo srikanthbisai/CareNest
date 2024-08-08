@@ -8,7 +8,7 @@ function Navbar() {
 
       <div className="logo font-bold font-serif text-3xl flex gap-2 justify-center items-center ">
         <img src="hands2.png" alt="" width={60} height={1} />
-        <Link to="/">CareNest</Link>
+        <Link to="/" className="lg:hidden xl:block">CareNest</Link>
       </div>
 
       <div className="listItems space-x-10  justify-center items-center font-bold font-mono text-2xl hidden lg:flex xl:flex">
@@ -20,7 +20,7 @@ function Navbar() {
         <Link to="/register"> Register</Link>
       </div>
 
-       <div className="sidebar md:hidden lg:hidden xl:hidden flex justify-center items-center">
+       <div className="sidebar md lg:hidden xl:hidden flex justify-center items-center">
         <IoMenu/>
        </div>
        
