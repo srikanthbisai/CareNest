@@ -1,25 +1,34 @@
-import { useState } from "react";
-import { Form, Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
-function  Login() {
-  const [error, setError] = useState(null);
+function Login() {
+  const [error, setError] = useState<string | null>(null);
+  const [isVisible, setIsVisible] = useState<boolean>(false);
 
-  const handleLogin = (e:any) => {
+  useEffect(() => {
+    const timer = setTimeout(() => setIsVisible(true), 100); // Delay to allow mounting
+    return () => clearTimeout(timer);
+  }, []);
+
+  const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-     const form = new FormData(e.target);
-     const formObject = Object.fromEntries(form.entries());
-     const {email,password} = formObject;
-     console.log("email", email);
-  }
+    const form = new FormData(e.currentTarget);
+    const formObject = Object.fromEntries(form.entries());
+    const { email, password } = formObject;
+    console.log("email", email);
+  };
 
   return (
-    <div className="register_container h-[700px] flex space-x-10 items-center justify-center pt-20">
+    <div className="register_container h-[700px] flex space-x-10 items-center justify-center pt-20 ml-14 relative overflow-hidden">
       <img
         src="care2.png"
-        className="w-1/2 h-full object-cover shadow-2xl rounded-xl ml-20 hidden lg:block"
+        className={`w-1/2 h-full object-cover shadow-2xl rounded-xl transition-transform duration-1000 ease-out ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'} lg:block`}
         alt=""
-      ></img>
-      <form className="flex flex-col gap-[20px] w-1/2 h-full justify-center items-center">
+      />
+      <form
+        className="flex flex-col gap-[20px] w-1/2 h-full justify-center items-center"
+        onSubmit={handleLogin}
+      >
         <h1 className="font-bold text-2xl">Login your account</h1>
         <input
           name="email"
@@ -34,14 +43,17 @@ function  Login() {
           className="p-[20px] border border-solid border-teal-500 rounded-lg"
         />
 
-          <button className="bg-teal-700 p-3 text-white font-bold w-[250px] rounded-md" onSubmit={handleLogin}>
-            Submit
-          </button>
+        <button
+          type="submit"
+          className="bg-teal-700 p-3 text-white font-bold w-[250px] rounded-md"
+        >
+          Submit
+        </button>
          
-         <p>{error}</p>
+        <p>{error}</p>
         <Link to="/register">
           <button className="font-bold w-[250px] rounded-md text-black">
-            Already have an account ?
+            Don't have an account ?
           </button>
         </Link>
       </form>

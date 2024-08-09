@@ -8,6 +8,7 @@ import Services from './routes/Services';
 import HomePage from './routes/Homepage';
 import Blog from './routes/Blog';
 import Plans from './routes/Plans';
+import About from './routes/About';
 
 
 function App() {
@@ -39,6 +40,10 @@ function App() {
          {
           path: "/plans",
           element: <Plans/>
+         },
+         {
+          path: "/about",
+          element: <About/>
          },
          
 
